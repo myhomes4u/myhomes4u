@@ -59,7 +59,7 @@ PREFERRED_METHOD: 'download',
 ```javascript
 const MAIL_CONFIG = {
     RECIPIENT_EMAIL: 'your-email@example.com',  // Your receiving email
-    DEFAULT_SUBJECT: 'Contact Form Submission - Grandoria Hotel',  // Default subject
+    DEFAULT_SUBJECT: 'Contact Form Submission - MyHome4u',  // Default subject
     PREFERRED_METHOD: 'mailto',  // 'mailto' or 'download'
     
     // Form validation settings
@@ -104,7 +104,7 @@ The generated email will look like:
 ```
 Subject: [User's Subject]
 
-Dear Grandoria Hotel Team,
+Dear MyHome4u Team,
 
 You have received a new message from your website contact form.
 
@@ -118,7 +118,7 @@ Message:
 [User's Message]
 
 ---
-This email was sent from your Grandoria Hotel website contact form.
+This email was sent from your MyHome4u website contact form.
 ```
 
 ## Troubleshooting

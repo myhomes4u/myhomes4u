@@ -1,5 +1,5 @@
 /**
- * Mail Service for Grandoria Hotel Website
+ * Mail Service for MyHome4u Website
  * Uses browser's native mail functionality (mailto) as fallback
  * and provides a simple serverless approach
  * 
@@ -10,7 +10,7 @@ class MailService {
     constructor() {
         this.isInitialized = true;
         this.recipientEmail = 'myhome4uuu@gmail.com'; // Change this to your email
-        this.defaultSubject = 'Contact Form Submission - Grandoria Hotel';
+        this.defaultSubject = 'Contact Form Submission - MyHome4u';
         
         console.log('Mail service initialized (no third-party services required)');
     }
@@ -60,7 +60,7 @@ class MailService {
      * @returns {string} - Formatted email body
      */
     createEmailBody(formData) {
-        let body = `Dear Grandoria Hotel Team,
+        let body = `Dear MyHome4u Team,
 
 You have received a new message from your website contact form.
 
@@ -79,7 +79,7 @@ You have received a new message from your website contact form.
 ${formData.message}
 
 ---
-This email was sent from your Grandoria Hotel website contact form.
+This email was sent from your MyHome4u website contact form.
 `;
 
         return encodeURIComponent(body);
@@ -188,7 +188,7 @@ Content-Type: text/plain; charset=UTF-8
      * @returns {string} - Plain text email body
      */
     createPlainTextBody(formData) {
-        let body = `Dear Grandoria Hotel Team,
+        let body = `Dear MyHome4u Team,
 
 You have received a new message from your website contact form.
 
@@ -207,7 +207,7 @@ Message:
 ${formData.message}
 
 ---
-This email was sent from your Grandoria Hotel website contact form.
+This email was sent from your MyHome4u website contact form.
 `;
 
         return body;

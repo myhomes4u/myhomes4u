@@ -1,5 +1,5 @@
 /**
- * Contact Form Handler for Grandoria Hotel Website
+ * Contact Form Handler for MyHome4u Website
  * No Third-Party Services Version
  * Uses browser's native mail functionality
  */

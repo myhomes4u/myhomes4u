@@ -1,5 +1,5 @@
 /**
- * Mail Service Configuration for Grandoria Hotel Website
+ * Mail Service Configuration for MyHome4u Website
  * No Third-Party Services Configuration
  */
 
@@ -8,7 +8,7 @@ const MAIL_CONFIG = {
     RECIPIENT_EMAIL: 'myhome4uuu@gmail.com',
     
     // Default subject for contact form emails
-    DEFAULT_SUBJECT: 'Contact Form Submission - Grandoria Hotel',
+    DEFAULT_SUBJECT: 'Contact Form Submission - MyHome4u',
     
     // Form validation settings
     VALIDATION: {
@@ -22,8 +22,8 @@ const MAIL_CONFIG = {
     
     // Email template settings
     EMAIL_TEMPLATE: {
-        HEADER: 'Dear Grandoria Hotel Team,\n\nYou have received a new message from your website contact form.',
-        FOOTER: '\n\n---\nThis email was sent from your Grandoria Hotel website contact form.'
+        HEADER: 'Dear MyHome4u Team,\n\nYou have received a new message from your website contact form.',
+        FOOTER: '\n\n---\nThis email was sent from your MyHome4u website contact form.'
     }
 };
 
