@@ -7,39 +7,39 @@
   --nav-font: "Poppins",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors - Updated to yellow background and black foreground */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #40524d; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #0d1f1a; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #2f5d50; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: rgb(255, 255, 255); /* Yellow background */
+  --default-color: #000000; /* Black foreground/text */
+  --heading-color: #000000; 
+  --accent-color: #000000; 
+  --surface-color: #ffff00; 
+  --contrast-color: #000000; 
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors - Updated for yellow and black */
 :root {
-  --nav-color: rgba(255, 255, 255, 0.6);  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #40524d; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #2f5d50; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: rgba(0, 0, 0, 0.6);  
+  --nav-hover-color: #000000; 
+  --nav-mobile-background-color: #ffffff; 
+  --nav-dropdown-background-color: #ffff00; 
+  --nav-dropdown-color: #000000; 
+  --nav-dropdown-hover-color: #333333; 
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+/* Color Presets - Updated for yellow and black */
 
 .light-background {
-  --background-color: #f1f6f5;
-  --surface-color: #ffffff;
+  --background-color: #fffacd;
+  --surface-color: #ffff00;
 }
 
 .dark-background {
-  --background-color: #2f5d50;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #2e2b28;
-  --contrast-color: #ffffff;
+  --background-color: #ffd700;
+  --default-color: #000000;
+  --heading-color: #000000;
+  --surface-color: #ffeb3b;
+  --contrast-color: #000000;
 }
 
 /* Smooth scroll */
@@ -133,8 +133,8 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #436e62;
-  --heading-color: #ffffff;
+  --background-color: #ffff00;
+  --heading-color: #000000;
   color: var(--default-color);
   transition: all 0.5s;
   z-index: 997;
@@ -192,6 +192,7 @@ h6 {
 .header .branding {
   min-height: 60px;
   padding: 10px 0;
+  background-color: var(--surface-color);
 }
 
 .header .logo {
@@ -199,7 +200,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 100px;
   margin-right: 8px;
 }
 
@@ -271,6 +272,23 @@ h6 {
   .navmenu li:last-child a {
     padding-right: 0;
   }
+
+  .navmenu a.active {
+      color: black !important;
+      font-weight: 600;
+      position: relative;
+    }
+    
+    .navmenu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: black;
+      border-radius: 2px;
+    }
 
   .navmenu li:hover>a,
   .navmenu .active,
@@ -644,7 +662,7 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: var(--surface-color);
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -877,7 +895,7 @@ section,
 
 .hotel-hero .hero-buttons .btn.btn-primary {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   border-color: var(--accent-color);
 }
 
@@ -889,12 +907,14 @@ section,
 
 .hotel-hero .hero-buttons .btn.btn-outline {
   background-color: transparent;
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: black;
+  border-color: black;
 }
 
 .hotel-hero .hero-buttons .btn.btn-outline:hover {
   transform: translateY(-2px);
+  background-color: black;
+  color: white;
 }
 
 .hotel-hero .hero-images {
@@ -1110,27 +1130,26 @@ section,
 
 .about-home .about-content .about-actions .btn-primary {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   border-color: var(--accent-color);
 }
 
 .about-home .about-content .about-actions .btn-primary:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 15%);
-  color: var(--contrast-color);
+  color: var(--background-color);
   transform: translateY(-2px);
 }
 
 .about-home .about-content .about-actions .btn-secondary {
   background-color: transparent;
-  color: var(--heading-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: black;
+  border-color: black;
 }
 
 .about-home .about-content .about-actions .btn-secondary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-  transform: translateY(-2px);
+  background-color: black;
+  border-color: black;
+  color: white;
 }
 
 .about-home .about-images {
@@ -1444,7 +1463,7 @@ section,
 
 .rooms-showcase .hero-room-showcase .showcase-content .booking-section .primary-booking-btn {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   padding: 14px 32px;
   border-radius: 6px;
   text-decoration: none;
@@ -1456,7 +1475,7 @@ section,
 
 .rooms-showcase .hero-room-showcase .showcase-content .booking-section .primary-booking-btn:hover {
   background-color: color-mix(in srgb, var(--accent-color), black 15%);
-  color: var(--contrast-color);
+  color: var(--background-color);
   transform: translateY(-1px);
 }
 
@@ -1588,7 +1607,7 @@ section,
 
 .rooms-showcase .standard-room-card .card-content .booking-row .book-link:hover {
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   border-color: var(--accent-color);
 }
 
@@ -2431,7 +2450,7 @@ section,
 
 .call-to-action .btn-primary {
   background: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   padding: 15px 30px;
   border-radius: 50px;
   text-decoration: none;
@@ -2445,7 +2464,7 @@ section,
   background: color-mix(in srgb, var(--accent-color), black 10%);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px color-mix(in srgb, var(--accent-color), transparent 60%);
-  color: var(--contrast-color);
+  color: var(--background-color);
 }
 
 .call-to-action .btn-secondary {
@@ -2502,7 +2521,7 @@ section,
 
 .call-to-action .image-wrapper .special-offer .label {
   display: block;
-  color: var(--contrast-color);
+  color: var(--background-color);
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 5px;
@@ -2511,7 +2530,7 @@ section,
 
 .call-to-action .image-wrapper .special-offer .discount {
   display: block;
-  color: var(--contrast-color);
+  color: var(--background-color);
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -3084,7 +3103,7 @@ section,
 
 .gallery-showcase .btn-gallery {
   background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #000000 20%));
-  color: var(--contrast-color);
+  color: var(--background-color);
   border: none;
   padding: 15px 35px;
   font-size: 1.1rem;
@@ -3100,7 +3119,7 @@ section,
 .gallery-showcase .btn-gallery:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-  color: var(--contrast-color);
+  color: var(--background-color);
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), #000000 10%), color-mix(in srgb, var(--accent-color), #000000 30%));
 }
 
@@ -4289,7 +4308,7 @@ section,
 
 .amenities .amenities-grid .service-item .service-icon i {
   font-size: 32px;
-  color: var(--contrast-color);
+  color: var(--surface-color);
   position: relative;
   z-index: 2;
 }
@@ -4476,7 +4495,7 @@ section,
 .offers .offer-card .offer-content .btn.btn-primary {
   background: var(--accent-color);
   border-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
 }
 
 .offers .offer-card .offer-content .btn.btn-primary:hover {
@@ -5095,7 +5114,7 @@ section,
 .booking .reservation-form .btn-primary {
   background: var(--accent-color);
   border: 1px solid var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   border-radius: 4px;
   padding: 1rem 2.5rem;
   font-size: 1rem;
@@ -5282,7 +5301,7 @@ section,
 .gallery .hotel-filters li:hover,
 .gallery .hotel-filters li.filter-active {
   background: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
 }
 
 @media (max-width: 768px) {
@@ -5922,7 +5941,7 @@ section,
 
 .hotel-location .location-content .action-buttons .btn.btn-primary {
   background: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   border: 2px solid var(--accent-color);
 }
 
@@ -6314,7 +6333,7 @@ section,
   border-radius: 8px;
   padding: 12px 20px;
   font-size: 15px;
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   color: var(--default-color);
   transition: 0.3s;
   margin-bottom: 15px;
@@ -6337,7 +6356,7 @@ section,
 .contact .contact-form-wrapper .btn-submit {
   background-color: var(--accent-color);
   border: none;
-  color: var(--contrast-color);
+  color: var(--background-color);
   padding: 13px 35px;
   font-size: 16px;
   font-weight: 600;
@@ -6348,7 +6367,7 @@ section,
 }
 
 .contact .contact-form-wrapper .btn-submit:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: var(--accent-color);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px color-mix(in srgb, var(--accent-color), transparent 70%);
 }
@@ -6374,7 +6393,7 @@ section,
   height: 60px;
   border-radius: 10px;
   background-color: var(--accent-color);
-  color: var(--contrast-color);
+  color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7023,7 +7042,7 @@ section,
   font-size: 1.1rem;
   background-color: var(--accent-color);
   border: none;
-  color: var(--contrast-color);
+  color: var(--background-color);
   border-radius: 50px;
   transition: all 0.3s ease;
 }
@@ -7103,7 +7122,7 @@ section,
 
 .partner-hostels .partner-card .partner-icon i {
   font-size: 2rem;
-  color: var(--contrast-color);
+  color: var(--background-color);
 }
 
 .partner-hostels .partner-card h4 {
@@ -7214,7 +7233,7 @@ section,
 
 .admission-partners .partner-institution-card .institution-icon i {
   font-size: 1.75rem;
-  color: var(--contrast-color);
+  color: var(--background-color);
 }
 
 .admission-partners .partner-institution-card h5 {

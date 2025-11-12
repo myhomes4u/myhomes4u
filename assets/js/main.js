@@ -190,4 +190,67 @@
 
   });
 
+  /**
+   * Room Filtering
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    const roomFilters = document.querySelectorAll('.room-filters select');
+    const roomCards = document.querySelectorAll('.room-card');
+
+    function applyFilters() {
+      const priceRange = document.getElementById('price-range').value;
+      const roomType = document.getElementById('room-type').value;
+      const amenities = document.getElementById('amenities').value;
+      const sortBy = document.getElementById('sort-by').value;
+
+      roomCards.forEach(card => {
+        let isVisible = true;
+
+        // Price Range Filter
+        if (priceRange !== 'all') {
+          const cardPrice = parseInt(card.dataset.price);
+          const [minPrice, maxPrice] = priceRange.split('-').map(Number);
+          if (cardPrice < minPrice || cardPrice > maxPrice) {
+            isVisible = false;
+          }
+        }
+
+        // Room Type Filter
+        if (roomType !== 'all' && card.dataset.roomType !== roomType) {
+          isVisible = false;
+        }
+
+        // Amenities Filter
+        if (amenities !== 'all' && !card.dataset.amenities.includes(amenities)) {
+          isVisible = false;
+        }
+
+        if (isVisible) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Sorting (to be implemented later)
+      // For now, just re-display based on visibility
+      const visibleCards = Array.from(roomCards).filter(card => card.style.display !== 'none');
+      if (sortBy === 'price-high-low') {
+        visibleCards.sort((a, b) => parseInt(b.dataset.price) - parseInt(a.dataset.price));
+      } else if (sortBy === 'price-low-high') {
+        visibleCards.sort((a, b) => parseInt(a.dataset.price) - parseInt(b.dataset.price));
+      }
+      
+      const roomsGrid = document.querySelector('.rooms-grid');
+      roomsGrid.innerHTML = '';
+      visibleCards.forEach(card => roomsGrid.appendChild(card));
+    }
+
+    roomFilters.forEach(filter => {
+      filter.addEventListener('change', applyFilters);
+    });
+
+    applyFilters(); // Apply filters on initial load
+  });
+
 })();
